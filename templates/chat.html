@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbox</title>
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const chatWindow = document.getElementById('chat');
+
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: messageInput.value
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatWindow.innerHTML += '<div>You: ' + messageInput.value + '</div>';
+                chatWindow.innerHTML += '<div>Assistant: ' + data.response + '</div>';
+                messageInput.value = '';
+                messageInput.focus();
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="chat" style="height:300px; overflow:auto; border:1px solid #ccc; padding:10px;">
+        <!-- Chat will be updated here -->
+    </div>
+    <input type="text" id="message" placeholder="Type your message here...">
+    <button onclick="sendMessage()">Send</button>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbox</title>
+    <script>
+        function sendMessage() {
+            var xhr = new XMLHttpRequest();
+            var message = document.getElementById('message').value;
+            xhr.open('POST', '/send_message', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    var response = JSON.parse(this.responseText);
+                    var chat = document.getElementById('chat');
+                    chat.innerHTML += '<div>' + response.response + '</div>';
+                    document.getElementById('message').value = '';
+                }
+            };
+            xhr.send('message=' + encodeURIComponent(message));
+        }
+    </script>
+</head>
+<body>
+    <div id="chat" style="height:300px; overflow:auto; border:1px solid #ccc; padding:10px;">
+        <!-- Chat will be updated here -->
+    </div>
+    <input type="text" id="message">
+    <button onclick="sendMessage()">Send</button>
+</body>
+</html>
