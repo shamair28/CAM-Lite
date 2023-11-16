@@ -1,0 +1,132 @@
+{
+  "SyncCursorPage": {
+    "ThreadMessage": {
+      "data": [
+        {
+          "id": "msg_xkX4kWDvynfqoPt4EJyW0siu",
+          "assistant_id": "asst_kXrJQ3HXcwWYTK3qHQH3P2pQ",
+          "content": [
+            {
+              "text": {
+                "annotations": [],
+                "value": "I apologize for any confusion. I am an AI digital assistant designed to help with business-related inquiries and to assist with analyzing documents. I don't have the ability to provide live weather updates or current event information.\n\nIf you have any questions or tasks related to business, such as analyzing documents, answering questions about business strategies, finance, management, or if you need help with the document you uploaded, please feel free to ask! If you need assistance with the uploaded file, you can instruct me on what specific information you're looking for, and I'll do my best to help you with it."
+              },
+              "type": "text"
+            }
+          ],
+          "created_at": 1700172758,
+          "file_ids": [],
+          "metadata": {},
+          "object": "thread.message",
+          "role": "assistant",
+          "run_id": "run_xC1m3BhQcb6Sy0QaBdoIWIOn",
+          "thread_id": "thread_72A7bHGGfDU4osdyZSIz2GOS"
+        },
+        {
+          "id": "msg_dR4SULXtVPXI6EeD8hus4QJv",
+          "assistant_id": null,
+          "content": [
+            {
+              "text": {
+                "annotations": [],
+                "value": "what do you mean"
+              },
+              "type": "text"
+            }
+          ],
+          "created_at": 1700172749,
+          "file_ids": ["file-4kDxZ935ZIHNyoM7TLacru72"],
+          "metadata": {},
+          "object": "thread.message",
+          "role": "user",
+          "run_id": null,
+          "thread_id": "thread_72A7bHGGfDU4osdyZSIz2GOS"
+        },
+        {
+          "id": "msg_eQYeZ0CBmfnmPrSnh0VzPSwL",
+          "assistant_id": "asst_kXrJQ3HXcwWYTK3qHQH3P2pQ",
+          "content": [
+            {
+              "text": {
+                "annotations": [],
+                "value": "I'm sorry, but as an AI, I don't have the capability to provide current weather updates. However, you can easily check the weather by using a weather website, a mobile app, or a search engine. If you meant something else or have any other questions, feel free to let me know!"
+              },
+              "type": "text"
+            }
+          ],
+          "created_at": 1700171143,
+          "file_ids": [],
+          "metadata": {},
+          "object": "thread.message",
+          "role": "assistant",
+          "run_id": "run_HE5SdH6dFRShulJeKyYNVwIJ",
+          "thread_id": "thread_72A7bHGGfDU4osdyZSIz2GOS"
+        },
+        {
+          "id": "msg_ucECNtu7ZmxRkyd0yPoX7kVa",
+          "assistant_id": null,
+          "content": [
+            {
+              "text": {
+                "annotations": [],
+                "value": "what is the weather like"
+              },
+              "type": "text"
+            }
+          ],
+          "created_at": 1700171141,
+          "file_ids": ["file-4kDxZ935ZIHNyoM7TLacru72"],
+          "metadata": {},
+          "object": "thread.message",
+          "role": "user",
+          "run_id": null,
+          "thread_id": "thread_72A7bHGGfDU4osdyZSIz2GOS"
+        },
+        {
+          "id": "msg_keDEyS3wCalXkKVrmYBc1bFS",
+          "assistant_id": "asst_kXrJQ3HXcwWYTK3qHQH3P2pQ",
+          "content": [
+            {
+              "text": {
+                "annotations": [],
+                "value": "Hello! How can I assist you today? If you have any business-related inquiries or need support with a document, please let me know!"
+              },
+              "type": "text"
+            }
+          ],
+          "created_at": 1700171061,
+          "file_ids": [],
+          "metadata": {},
+          "object": "thread.message",
+          "role": "assistant",
+          "run_id": "run_FM0XjwfhZ2VZKSmus7yql0Ns",
+          "thread_id": "thread_72A7bHGGfDU4osdyZSIz2GOS"
+        },
+        {
+          "id": "msg_QrSPMjPtxHLcOCn8hCdHxXfK",
+          "assistant_id": null,
+          "content": [
+            {
+              "text": {
+                "annotations": [],
+                "value": "hi"
+              },
+              "type": "text"
+            }
+          ],
+          "created_at": 1700171059,
+          "file_ids": ["file-4kDxZ935ZIHNyoM7TLacru72"],
+          "metadata": {},
+          "object": "thread.message",
+          "role": "user",
+          "run_id": null,
+          "thread_id": "thread_72A7bHGGfDU4osdyZSIz2GOS"
+        }
+      ],
+      "object": "list",
+      "first_id": "msg_xkX4kWDvynfqoPt4EJyW0siu",
+      "last_id": "msg_QrSPMjPtxHLcOCn8hCdHxXfK",
+      "has_more": false
+    }
+  }
+}

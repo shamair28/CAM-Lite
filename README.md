@@ -15,3 +15,4 @@
 - Message history 
 - Network security
 - Efficiency
+- File Handling is scuffed
