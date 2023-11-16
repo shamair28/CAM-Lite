@@ -28,7 +28,7 @@ def send_message():
     user_input = request.data.decode('utf-8')
     print(user_input)
     #user_input = request.g['message']
-    message = client.beta.threads.messages.create(
+    messages = client.beta.threads.messages.create(
             thread_id=thread.id,
             role="user",
             content=user_input,
