@@ -1,0 +1,97 @@
+body {
+    background-color: #121212; /* Dark background */
+    color: #FFFFFF; /* Light text */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+#chat {
+    height: 300px;
+    overflow-y: auto;
+    background-color: #262626;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#message {
+    width: 97%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    background-color: #6200EA; /* Button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor:crosshair;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+button:hover {
+    background-color: #7F39FB;
+}
+.user {
+    /* Styles for the user message container */
+    font-weight: bold;
+    font-style: normal;
+    color: #f3f3f3;
+}
+
+.user-message-content {
+    /* Override inherited styles */
+    font-weight: normal; /* or the specific weight you prefer */
+    font-style: normal; /* or the specific style you prefer */
+    color: #ffffff; /* or any other color you want for the text */
+    
+    /* Other styles */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.assistant {
+    /* Styles for the assistant message container */
+    font-weight:bold;
+    color: #03dac6;
+}
+
+.assistant-response-content {
+    /* Override inherited styles */
+    font-weight: normal; /* or the specific weight you prefer */
+    color: #d6d6d6; /* or any other color you want for the text */
+    font-style: italic;
+    
+    /* Other styles */
+    margin-bottom: 10px;
+    text-align: center;
+}
+#app-container {
+    display: flex;
+    align-items: center; /* Adjust as needed */
+    justify-content: center; /* Adjust as needed */
+    width: 80%;
+    max-width: 1200px;
+}
+
+#headings {
+    min-width: auto;
+    margin-right: 20px; /* Space between headings and chat */
+    text-align: left; /* Align text to the left */
+    /* Add more styling as required */
+}
+
+/* Continue with existing styles */
