@@ -59,7 +59,7 @@ button:hover {
     color: #ffffff; /* or any other color you want for the text */
     
     /* Other styles */
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -67,6 +67,8 @@ button:hover {
     /* Styles for the assistant message container */
     font-weight:bold;
     color: #03dac6;
+    text-align: right;
+    font-style: italic;
 }
 
 .assistant-response-content {
@@ -77,7 +79,7 @@ button:hover {
     
     /* Other styles */
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
 }
 #app-container {
     display: flex;
@@ -92,6 +94,10 @@ button:hover {
     margin-right: 20px; /* Space between headings and chat */
     text-align: left; /* Align text to the left */
     /* Add more styling as required */
+}
+.thinking-message {
+    font-style: italic;
+    text-align: center;
 }
 
 /* Continue with existing styles */

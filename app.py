@@ -12,7 +12,7 @@ client = openai.Client(api_key='sk-ALoZx5hL7YBIHfFplUJoT3BlbkFJxVJyrw92L35VAT3Dt
 #file = client.files.create(file=open("static/billionaire.txt", "rb"), purpose='assistants')
 assistant = client.beta.assistants.create(
     name="CAM-Lite",
-    instructions = "AI assistant that deals in business related inquiries for all levels of an organization",
+    instructions = "AI assistant that deals in business related inquiries for all levels of an organization.",
     #tools = [{"type": "retrieval"}],
     tools = [],
     #file_ids=[file.id],

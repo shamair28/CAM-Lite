@@ -6,31 +6,49 @@
     <title>CAM-Lite</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="/static/stylesheet.css">
+    <script src="/static/marked.min.js"></script>
 
     <script>
-        // Keeping the original script for sending messages
+        
         function sendMessage() {
             const messageInput = document.getElementById('message');
             const chatWindow = document.getElementById('chat');
+            const messageToSend = messageInput.value;
+            messageInput.disabled = true;
+
+            // Add the thinking message to the chat
+            const thinkingMessage = document.createElement('div');
+            thinkingMessage.id = 'thinking-message';
+            thinkingMessage.textContent = "CAM-Lite is thinking...";
+            chatWindow.appendChild(thinkingMessage);
+
 
             fetch('/send_message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'text/plain',
                 },
-                body: messageInput.value
+                body: messageToSend
             })
             .then(response => response.json())
             .then(data => {
-                chatWindow.innerHTML += '<div class="user">You: <span class="user-message-content">' + messageInput.value + '</span></div>';
-                chatWindow.innerHTML += '<div class="assistant">Assistant: <span class="assistant-response-content">' + data.response + '</span></div>';
-                messageInput.value = '';
+                // Remove the thinking message
+                const thinkingMessageElement = document.getElementById('thinking-message');
+                if (thinkingMessageElement) {
+                    chatWindow.removeChild(thinkingMessageElement);
+                }
+                let htmlResponse = marked.parse(data.response);
+                chatWindow.innerHTML += '<div class="user">You: <span class="user-message-content">' + messageToSend + '</span></div>';
+                chatWindow.innerHTML += '<div class="assistant">Assistant <span class="assistant-response-content">' + htmlResponse + '</span></div>';
                 messageInput.focus();
+                messageInput.value = "";
                 chatWindow.scrollTop = chatWindow.scrollHeight;
+                messageInput.disabled  = false;
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
+            
         }
         document.addEventListener('DOMContentLoaded', (event) => {
             const messageInput = document.getElementById('message');
@@ -45,6 +63,8 @@
             });
         });
 
+
+
     </script>
 </head>
 <body>
@@ -57,7 +77,7 @@
         <div id="chat">
             <!-- Chat messages will go here -->
         </div>
-        <input type="text" id="message" placeholder="Type a message...">
+        <input type="text" name="message" id="message" placeholder="Type a message...">
         <center><button onclick="sendMessage()">Send</button></center>
     </div>
 </body>
