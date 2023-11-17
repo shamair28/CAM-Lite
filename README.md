@@ -16,3 +16,6 @@
 - Network security
 - Efficiency
 - File Handling is scuffed
+
+## Screenshots
+<img width="1680" alt="current site screenshot" src="https://github.com/shamair28/CAM-Lite/assets/25914928/bf01211f-0dff-4206-b06b-045d73ac9bc2">
