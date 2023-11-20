@@ -95,9 +95,10 @@ button:hover {
     text-align: left; /* Align text to the left */
     /* Add more styling as required */
 }
-.thinking-message {
+#thinking-message {
     font-style: italic;
     text-align: center;
+    margin-top: 10%;
 }
 
 /* Continue with existing styles */
