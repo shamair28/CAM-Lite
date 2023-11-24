@@ -9,7 +9,7 @@
     <script src="/static/marked.min.js"></script>
 
     <script>
-        
+
         function sendMessage() {
             const messageInput = document.getElementById('message');
             const chatWindow = document.getElementById('chat');
@@ -75,10 +75,15 @@
         </div>
     <div id="container">
         <div id="chat">
-            <!-- Chat messages will go here -->
+            <div id="welcome-message">
+                Welcome to CAM-Lite
+            </div>
+
         </div>
-        <input type="text" name="message" id="message" placeholder="Type a message...">
-        <center><button onclick="sendMessage()">Send</button></center>
+        <div class="app-container">
+            <input type="text" name="message" id="message" placeholder="Type a message...">
+            <center><button onclick="sendMessage()">Send</button></center> 
+        </div>
     </div>
 </body>
 </html>

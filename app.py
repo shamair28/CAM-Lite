@@ -20,9 +20,13 @@ assistant = client.beta.assistants.create(
     )
 thread = client.beta.threads.create()
 
+
 @app.route('/')
 def home():
+    global thread
+    thread = client.beta.threads.create()
     return render_template('chat_modified.html')
+
 
 @app.route('/send_message', methods=['POST'])
 def send_message():
@@ -65,5 +69,5 @@ def send_message():
     return jsonify({'response': assistant_response})
 
 if __name__ == '__main__':
-    app.debug=True
-    app.run(debug=True)
+    app.debug=False
+    #app.run(debug=True)

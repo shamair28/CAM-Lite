@@ -10,27 +10,30 @@ body {
 }
 #container {
     width: 80%;
+    min-width: 400px;
+    max-height: 90%;
     max-width: 600px;
     background-color: #1E1E1E;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 #chat {
-    height: 300px;
+    max-height: 400px;
     overflow-y: auto;
     background-color: #262626;
-    padding: 10px;
+    padding: 5%;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 #message {
-    width: 97%;
+    width: 90%;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: none;
+    display: block;
+    margin: 5% auto;
 }
 button {
     background-color: #6200EA; /* Button color */
@@ -86,6 +89,7 @@ button:hover {
     align-items: center; /* Adjust as needed */
     justify-content: center; /* Adjust as needed */
     width: 80%;
+    height: 75%;
     max-width: 1200px;
 }
 
@@ -95,10 +99,16 @@ button:hover {
     text-align: left; /* Align text to the left */
     /* Add more styling as required */
 }
+
 #thinking-message {
     font-style: italic;
     text-align: center;
     margin-top: 10%;
 }
 
-/* Continue with existing styles */
+#welcome-message {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
