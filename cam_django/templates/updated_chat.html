@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbox</title>
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const chatWindow = document.getElementById('chat');
+
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: messageInput.value
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatWindow.innerHTML += '<div>You: ' + messageInput.value + '</div>';
+                chatWindow.innerHTML += '<div>Assistant: ' + data.response + '</div>';
+                messageInput.value = '';
+                messageInput.focus();
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+#chat-container {
+    width: 60%;
+    max-width: 600px; /* Set a max-width for larger screens */
+    margin: auto;
+    margin-top: 5%;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+}
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+#user-input {
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in element's content width */
+    text-align: left;
+}
+button {
+    width: 100%;
+    margin-top: 5%;
+    padding: 10px;
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #3700b3;
+}
+b {
+    color: #bb86fc;
+}
+.message {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.user, .bot {
+    display: block;
+}
+.user {
+    font-weight: bold;
+    font-style: italic;
+    color: #ffffff;
+}
+.consult-gpt {
+    font-weight: lighter;
+    color: #03dac6;
+}
+.input {
+    text-align: center
+}
+.italic {
+    font-style: italic;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    #chat-container {
+        width: 95%;
+    }
+    #messages {
+        height: 200px;
+    }
+}
+</style>
+
+<body>
+    <div id="chat" style="height:300px; overflow:auto; border:1px solid #ccc; padding:10px;">
+        <!-- Chat will be updated here -->
+    </div>
+    <input type="text" id="message" placeholder="Type your message here...">
+    <button onclick="sendMessage()">Send</button>
+</body>
+</html>

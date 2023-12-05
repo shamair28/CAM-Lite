@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with AI</title>
+    <style>
+        /* Add your CSS styling here */
+        .chat-container {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .message-input {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container" id="chatContainer"></div>
+    <input type="text" id="messageInput" class="message-input">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const inputField = document.getElementById('messageInput');
+            const message = inputField.value;
+            inputField.value = '';
+
+            // Display the user's message in the chat
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.innerHTML += `<div>User: ${message}</div>`;
+
+            // Send the message to the Flask backend
+            const response = await fetch('/message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: message
+            });
+
+            const data = await response.json();
+
+            // Display the assistant's reply in the chat
+            chatContainer.innerHTML += '<div>Assistant: ' + data.reply + '</div>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAM-Lite</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <script src="/static/marked.min.js"></script>
+
+    <script>
+
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const chatWindow = document.getElementById('chat');
+            const messageToSend = messageInput.value;
+            messageInput.disabled = true;
+
+            // Add the thinking message to the chat
+            const thinkingMessage = document.createElement('div');
+            thinkingMessage.id = 'thinking-message';
+            thinkingMessage.textContent = "CAM-Lite is thinking...";
+            chatWindow.appendChild(thinkingMessage);
+
+
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: messageToSend
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove the thinking message
+                const thinkingMessageElement = document.getElementById('thinking-message');
+                if (thinkingMessageElement) {
+                    chatWindow.removeChild(thinkingMessageElement);
+                }
+                let htmlResponse = s.parse(data.response);
+                chatWindow.innerHTML += '<div class="user">You: <span class="user-message-content">' + messageToSend + '</span></div>';
+                chatWindow.innerHTML += '<div class="assistant">Assistant <span class="assistant-response-content">' + htmlResponse + '</span></div>';
+                messageInput.focus();
+                messageInput.value = "";
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                messageInput.disabled  = false;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+            
+        }
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const messageInput = document.getElementById('message');
+
+            messageInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent the default action (form submission)
+                    if (messageInput.value.trim() !== '') {
+                        sendMessage();
+                    }
+                }
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <div id="app-container">
+        <div id="headings">
+            <h1>CAM-Lite</h1>
+            <h3>Build 1.0 - 11.07.23</h3>
+        </div>
+    <div id="container">
+        <div id="chat">
+            <div id="welcome-message">
+                Welcome to CAM-Lite
+            </div>
+
+        </div>
+        <div class="app-container">
+            <input type="text" name="message" id="message" placeholder="Type a message...">
+            <center><button onclick="sendMessage()">Send</button></center> 
+        </div>
+    </div>
+</body>
+</html>
