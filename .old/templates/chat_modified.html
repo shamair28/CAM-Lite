@@ -37,7 +37,7 @@
                 if (thinkingMessageElement) {
                     chatWindow.removeChild(thinkingMessageElement);
                 }
-                let htmlResponse = marked.parse(data.response);
+                let htmlResponse = s.parse(data.response);
                 chatWindow.innerHTML += '<div class="user">You: <span class="user-message-content">' + messageToSend + '</span></div>';
                 chatWindow.innerHTML += '<div class="assistant">Assistant <span class="assistant-response-content">' + htmlResponse + '</span></div>';
                 messageInput.focus();
