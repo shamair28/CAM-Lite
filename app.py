@@ -2,11 +2,12 @@
 from flask import Flask, request, jsonify, render_template
 import openai
 import time
+import config
 
 app = Flask(__name__)
 
 # Use the actual OpenAI API key
-client = openai.Client(api_key='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')
+client = openai.Client(api_key=config.api_key)
 
 # The original code for file upload and assistant creation
 #file = client.files.create(file=open("static/billionaire.txt", "rb"), purpose='assistants')
