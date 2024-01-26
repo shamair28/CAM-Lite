@@ -24,7 +24,7 @@ r50k_base (or gpt2)   -	GPT-3 models like davinci
 
 gpt4 = 'cl100k_base'
 
-def tokount(string: str, encoding_name: str) -> int:
+def token_counter(string: str, encoding_name: str) -> int:
     # GPT model stored as encoding_name
     encoding = tiktoken.get_encoding(encoding_name)
     num_tokens = len(encoding.encode(string))

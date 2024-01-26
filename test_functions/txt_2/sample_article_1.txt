@@ -1,0 +1,5 @@
+To print shipping labels for orders in BigCommerce, you can use USPS by Endicia to print USPS shipping labels directly from the BigCommerce control panel. Alternatively, third-party apps like ShipStation and EasyShip can be used for managing shipments and printing labels. More options are available in the Shipping & Fulfillment section of the BigCommerce App Marketplace.
+
+If you're selling physical products, you cannot bypass the shipping module. For selling services, it's recommended to mark products as digital instead of physical, allowing customers to pay without entering shipping information. More information is available in the guide for Creating Digital Products.
+
+For adding customs information to products, such as country of origin, commodity description, and HS codes, the new Adding Products (v3) experience in BigCommerce allows this both in the control panel and via API. If you're using the Adding Products (v2) experience, this can only be done using the API.

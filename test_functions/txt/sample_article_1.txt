@@ -1,5 +1,16 @@
-To print shipping labels for orders in BigCommerce, you can use USPS by Endicia to print USPS shipping labels directly from the BigCommerce control panel. Alternatively, third-party apps like ShipStation and EasyShip can be used for managing shipments and printing labels. More options are available in the Shipping & Fulfillment section of the BigCommerce App Marketplace.
-
-If you're selling physical products, you cannot bypass the shipping module. For selling services, it's recommended to mark products as digital instead of physical, allowing customers to pay without entering shipping information. More information is available in the guide for Creating Digital Products.
-
-For adding customs information to products, such as country of origin, commodity description, and HS codes, the new Adding Products (v3) experience in BigCommerce allows this both in the control panel and via API. If you're using the Adding Products (v2) experience, this can only be done using the API.
+Last year, TD reported US$285 million in net income in its first quarter
+from its investment in Schwab. TD says adjusted net income should work
+out to about US$230 million, for about a 30 per cent drop from last
+year’s US$328 million. Canaccord Genuity Group Inc. analyst Matthew Lee
+says the Schwab results came in slightly higher than expected, but that
+the financial firm’s outlook for the year disappointed. Lee said key
+takeaways for the year from U.S. bank earnings in recent days are net
+income pressure, improved capital markets and continued credit
+challenges on commercial real estate loans, some of which translate into
+Canadian trends as well. “In terms of cross-border read-throughs, we
+expect the Canadian banks to see similar trends in capital markets and
+loan growth but do not necessarily expect to see the same level of net
+interest margin pressure as mortgage renewals help to offset increasing
+deposit costs.” Lee said Bank of Montreal and Royal Bank of Commerce
+should benefit the most from improvements in U.S. capital markets, while
+TD will be most affected by softer net interest income in the country.
