@@ -1,0 +1,10 @@
+{
+    "topics": [
+        "business",
+        "tech",
+        "politics",
+        "science",
+        "finance"
+    ],
+    "text_input": "I am going to send you text, as well as options for topics and relevance, that you will decide based on the text contents. The options for relevance is low medium or high, with the criteria for relevance being related to a small business's personal needs. For reference: a low relevance article involves news that will only be relevant for a short period of time or not at all, a medium relevance article involves news that could be relevant for a short-medium period of time, like upcoming events or long term forecasts, high relevance news involves things like upcoming holidays major events that will have a dramatic effect on the business's operations, whatever it may be. the options for topics are as follows: {topics}. If the text does not fit one of these topics, please write a new one that fits better. you will then write a ten word descriptive summary of the text, to be returned as '10wordtitle', ** BE SURE THAT YOU do not include spaces or punctuation for the 10wordtitle ***. your expected output is as follows: topic=[topic]^relevance=[relevance]^tenwordtitle=[tenwordtitle]. The text is as follows {text_contents}"
+}
