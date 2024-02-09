@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import openai
 import time
 import os
-import config
+## import config
 
 app = Flask(__name__)
 
